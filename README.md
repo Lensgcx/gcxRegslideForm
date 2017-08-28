@@ -1,5 +1,4 @@
 # gcxRegslideForm  
-## jQuery-gcxRegslideForm
 ## Slide Form - Form build and validation made easy
 ## 开发
 ```bash
