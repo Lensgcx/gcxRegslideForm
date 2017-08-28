@@ -5,9 +5,6 @@
     # 克隆项目
     git clone  https://github.com/Lensgcx/gcxSpringsideBar.git
     # 安装依赖
-    npm install
-    //or # 建议不要用cnpm  安装有各种诡异的bug 可以通过如下操作解决npm速度慢的问题
-    npm install --registry=https://registry.npm.taobao.org
     cnpm install
 ```
 Plug-in description：
