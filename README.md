@@ -1,6 +1,19 @@
 #gcxRegslideForm  
-jQuery-gcxRegslideForm  
-Slide Form - Form build and validation made easy
+#jQuery-gcxRegslideForm  
+##Slide Form - Form build and validation made easy
+## 开发
+```bash
+    # 克隆项目
+    git clone https://github.com/PanJiaChen/vue-element-admin.git
+
+    # 安装依赖
+    npm install
+    //or # 建议不要用cnpm  安装有各种诡异的bug 可以通过如下操作解决npm速度慢的问题
+    npm install --registry=https://registry.npm.taobao.org
+
+    # 本地开发 开启服务
+    npm run dev
+```
 Plug-in description：
 This plug-in is divided into three parts：1.Construction and implementation of sliding click behavior 2.Custom dynamic form content 3.Form validation and submission.
 Plug in based on jquery，JaveScript automatically generates a single registry page. Automatic personalization，Reflected in the following points：
