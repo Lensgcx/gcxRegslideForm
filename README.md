@@ -1,6 +1,6 @@
-#gcxRegslideForm  
-jQuery-gcxRegslideForm  
-Slide Form - Form build and validation made easy
+# gcxRegslideForm  
+## jQuery-gcxRegslideForm
+## Slide Form - Form build and validation made easy
 ## 开发
 ```bash
     # 克隆项目
