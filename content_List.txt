@@ -1,0 +1,165 @@
+
+
+    //第一页内容:
+	cont_step1: [
+		'Lead_Hello, nice to meet you, then you will take a few minutes to register, first of all, please let me know your purpose to China.',
+		'Radio_I want to teach or work in China',
+		'Radio_I want to study in China',
+		'Radio_I want to post recruiting or enrollment or education coopration information',
+		'Radio_I want to travel in China'
+	],
+
+
+	//第一页内容  样式设置:
+	I_want_to_teach_or_work_in_China_setting: [ 'name:objective', 'width:15', 'height:15' ],
+	I_want_to_study_in_China_setting: [ 'name:objective', 'width:15', 'height:15' ],
+	I_want_to_post_recruiting_enrollment_coopration_information_setting: [ 'name:objective', 'width:15', 'height:15' ],
+	I_want_to_travel_in_China_setting: [ 'name:objective', 'width:15', 'height:15' ],
+
+
+	//第二页内容:
+	cont_step2:[ "Select_nationality" ],
+
+
+	//第二页内容  样式设置:
+	nationality_setting: [ 'postion:center', 'cen_adjust:1', 'size:8', 'width:300', 'height:26', 'font-size:20' ],
+
+
+	//第三页内容:
+	cont_step3: [ 'Input_memberID', 'Password_password', 'Password_re-enter-password', 'P_If You Forget Password...', 'Select_password question', 'Input_password answer', 'Txt_sss' ],
+	password_question_opt: [ '我最喜欢的颜色是什么', '我的出生地是哪里', '我的爸爸叫什么名字', '我最喜欢的体育运动', '我的第一个朋友是谁', '我的中学叫什么名字', '我的宠物叫什么' ],
+
+
+	//第三页内容  样式设置:
+	memberID_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	password_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	re_enter_password_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	If_You_Forget_Password____setting: [ 'postion:center', 'cen_adjust:0.6', 'font-size:20', 'norequired' ],
+	password_question_setting: [ 'postion:center', 'cen_adjust:0.6', 'width:155' ],
+	password_answer_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	sss_setting: [ 'postion:center', 'cen_adjust:0.8', 'cols:20', 'rows:5' ],
+
+
+	//第四页内容（个人） :
+	cont_step4: [ 'Input_name', 'P_gender', 'Radio_male', 'Radio_female', 'Input_personal Email', 'Input_date of birth', 'Input_carded',
+		'P_hobby', 'Checkbox_baskball', 'Checkbox_football', 'Gap_gap1', 'Checkbox_swimming', 'Checkbox_other', 'Select_marriage', 'Select_education' ],
+
+
+	//第四页内容（个人）  样式设置:
+	name_setting: [ 'postion:center', 'cen_adjust:0.8', 'norequired', 'value:gcxgcxgcxg' ],
+	gender_setting: [ 'equal:2.25', 'postion:right' ],
+	male_setting: [ 'equal:8', 'postion:right', 'cen_adjust:0.3', 'name:gender' ],
+	female_setting: [ 'equal:6', 'postion:center', 'cen_adjust:0.3', 'name:gender' ],
+	personal_Email_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	date_of_birth_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	carded_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	marriage_setting: [ 'postion:center', 'cen_adjust:0.74', 'size:1', 'width:155' ],
+	education_setting: [ 'postion:center', 'cen_adjust:0.74', 'size:1', 'width:155' ],
+	hobby_setting: [ 'equal:2.25', 'postion:right' ],
+	baskball_setting: [ 'equal:6', 'postion:center', 'cen_adjust:0.7' ],
+	football_setting: [ 'equal:6', 'postion:center', 'cen_adjust:0.3' ],
+	gap1_setting: [ 'equal:2.2' ],
+	swimming_setting: [ 'equal:5.1', 'postion:center', 'cen_adjust:0.34' ],
+	other_setting: [ 'equal:6', 'postion:left' ],
+
+
+	//第四页内容（企业） :
+	cont_step4: [ 'Input_Cen_company name', 'Input_Cen_office TEL', 'Input_Cen_company Email',
+		'Input_Cen_address', 'Input_Cen_fax', 'Input_Cen_remarks' ],
+
+
+	//第四页内容（企业）  样式设置:
+	company_name_setting: [ 'postion:center', 'cen_adjust:0.8', 'norequired', 'value:gcxgcxgcxg' ],
+	office_TEL_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	company_Email_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	address_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	fax_setting: [ 'postion:center', 'cen_adjust:0.8' ],
+	remarks_setting: [ 'postion:center', 'cen_adjust:0.8', 'norequired' ],
+
+
+
+
+	<!--<h1>Welcome to Helen</h1>-->
+    		<!--<span class='reg_close close'></span>-->
+    		<!--<div class="content_split_line"></div>-->
+    		<!--<div class="reg_content_img"></div>-->
+    		<!--<div id='reg_slider'>-->
+    		<!--<div id='reg_slider_turn'>-->
+    		<!--&lt;!&ndash;1st&ndash;&gt;-->
+    		<!--<div class="reg_content reg_1st">-->
+    		<!--<p>Hello, nice to meet you, then you will take a few minutes to register, first of all, please-->
+    		<!--let me know your purpose to China.</p>-->
+    		<!--<ul>-->
+    		<!--<li>-->
+    		<!--<input id="rbtnlSelect_0" type="radio" name="reg_purpose" value="I want to teach or work in China" checked="checked"/>-->
+    		<!--<label for="rbtnlSelect_0">I want to teach or work in China</label>-->
+    		<!--</li>-->
+    		<!--<li>-->
+    		<!--<input id="rbtnlSelect_1" type="radio" name="reg_purpose" value="I want to study in China"/>-->
+    		<!--<label for="rbtnlSelect_1">I want to study in China</label>-->
+    		<!--</li>-->
+    		<!--<li>-->
+    		<!--<input id="rbtnlSelect_2" type="radio" name="reg_purpose" value="I want to post recruiting / enrollment / educationcoopration information"/>-->
+    		<!--<label for="rbtnlSelect_2">I want to post recruiting / enrollment / educationcoopration-->
+    		<!--information</label>-->
+    		<!--</li>-->
+    		<!--<li>-->
+    		<!--<input id="rbtnlSelect_3" type="radio" name="reg_purpose" value="I want to travel in China"/>-->
+    		<!--<label for="rbtnlSelect_3">I want to travel in China</label>-->
+    		<!--</li>-->
+    		<!--</ul>-->
+    		<!--</div>-->
+    		<!--&lt;!&ndash;2st&ndash;&gt;-->
+    		<!--<div class="reg_content reg_2st">-->
+    		<!--<div class="reg_2st_ul">-->
+    		<!--<p>What is your <strong>nationality?</strong></p>-->
+    		<!--<select size="8" name="lbNationality" multiple="multiple" id="lbNationality">-->
+    		<!--<option selected="selected" value="Australia">Australia</option>-->
+    		<!--<option value="Canada">Canada</option>-->
+    		<!--<option value="Lndia">Lndia</option>-->
+    		<!--<option value="New Zealand">New Zealand</option>-->
+    		<!--<option value="Philippines">Philippines</option>-->
+    		<!--<option value="South Africa">South Africa</option>-->
+    		<!--<option value="U.S.A">U.S.A</option>-->
+    		<!--<option value="U.K">U.K</option>-->
+    		<!--<option value="Western Africa">Western Africa</option>-->
+    		<!--<option value="Others">Others</option>-->
+    		<!--</select>-->
+    		<!--</div>-->
+
+    		<!--</div>-->
+    		<!--&lt;!&ndash;3st&ndash;&gt;-->
+    		<!--<div class="reg_content reg_34st">-->
+    		<!--<ul class="reg_3st_ul"></ul>-->
+    		<!--</div>-->
+    		<!--&lt;!&ndash;4st&ndash;&gt;-->
+    		<!--<div class="reg_content reg_34st">-->
+    		<!--<ul class="reg_4st_ul"></ul>-->
+    		<!--</div>-->
+    		<!--</div>-->
+    		<!--</div>-->
+    		<!--<div class='bottom'>-->
+    		<!--<div class="button_module" id="reg_back_module">-->
+    		<!--<input type="button" value="Back" class='reg_back'/>-->
+    		<!--</div>-->
+    		<!--<div class='step'>-->
+    		<!--<div class="step_jump">-->
+    		<!--<span></span>-->
+    		<!--<ul>-->
+    		<!--<li data-num='1'></li>-->
+    		<!--<li data-num='2'></li>-->
+    		<!--<li data-num='3'></li>-->
+    		<!--<li data-num='4'></li>-->
+    		<!--</ul>-->
+    		<!--</div>-->
+    		<!--</div>-->
+    		<!--<div class="button_module" id="reg_next_module">-->
+    		<!--<input type="button" value="Next" class='reg_next'/>-->
+    		<!--<input type="submit" value="submit" class='reg_submit'/>-->
+    		<!--</div>-->
+    		<!--</div>-->
+
+
+
+
+

@@ -1,0 +1,38 @@
+{
+	"cont_step1":[
+		"Hello, nice to meet you, then you will take a few minutes to register, first of all, please let me know your purpose to China.",
+		"I want to teach or work in China",
+		"I want to study in China",
+		"I want to post recruiting/enrollment/coopration information",
+		"I want to travel in China"
+	],
+	"cont_step2":[ "nationality" ],
+
+	"nationality_opt1":[
+		"Australia", "Canada", "Lndia", "New Zealand", "Philippines", "South Africa", "U.S.A", "U.K",
+		"Western Africa"
+	],
+	"nationality_opt2":[
+		"Undergraduate", "Master's Degree Program", "Doctoral Degree Program", "Senior Visiting Student",
+		"General Visiting Student", "Research Scholar", "Language Student", "Short-term Cultural Tour Student"
+	],
+	"nationality_opt3":[
+		"Science & Technology", "Medical", "High Schools", "Agriculture & Forestry",
+		"Professional", "Comprehensive universities", "Languages", "Normal", "Finance & Economics", "Others"
+	],
+	"nationality_opt4":[ "Australia", "Canada", "Lndia", "New Zealand" ],
+
+	"cont_step4_1":[
+		"name", "gender", "male", "female", "personal Email", "personal Mobile","date of birth",
+		 "hobby", "baskball", "football", "gap1", "swimming",
+		"other", "marriage", "education"
+	],
+	"marriage_opt":[ "Please select", "Unmarried", "Married" ],
+	"education_opt":[
+		"Please select", "High school", "Junior College", "College", "Postgraduate", "Doctorate", "Other"
+	],
+
+	"cont_step4_2":[
+		"company name", "office TEL", "company Email", "address", "fax","website", "remarks"
+	]
+}
