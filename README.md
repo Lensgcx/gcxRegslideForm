@@ -16,3 +16,21 @@ Plug in based on jquery，JaveScript automatically generates a single registry p
 Thanks to the jquery-validate plugin for this plugin support，Some forms of gcxRegslideForm verify functional dependencies jquery-validate，Of 
 course, can also be added to the public development methods.
 In addition, this plugin adds a number of authentication expansion to the additional-methods script to support the vast majority of forms of authentication in the current,project application.
+
+GcxRegslideForm instructions：
+Ⅰ、Including it on your page
+```javescript
+<script src=".../js/merge/gcxRegslideAux.js"></script>                                        Auxiliary script   
+<script src=".../js/lan.js"></script>                                                         language
+<script src=".../js/gcxRegslideForm-1.1.0.js"></script>                                       Core plugin
+```
+Ⅱ、Add plug-in method on object
+```javescript
+<form id='reg_container' action="reg_new.php" method="post"></form>  
+<script>  
+$( function()  
+{  
+     $( '#reg_container' ).gcxRegslideForm();  
+} );  
+</script>  
+```
