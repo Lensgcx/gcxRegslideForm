@@ -7,6 +7,7 @@
     # 安装依赖
     cnpm install
 ```
+## 简单说明 （ Simple explanation ）
 Plug-in description：
 This plug-in is divided into three parts：1.Construction and implementation of sliding click behavior 2.Custom dynamic form content 3.Form validation and submission.
 Plug in based on jquery，JaveScript automatically generates a single registry page. Automatic personalization，Reflected in the following points：
@@ -23,7 +24,7 @@ Thanks to the jquery-validate plugin for this plugin support，Some forms of gcx
 course, can also be added to the public development methods.
 In addition, this plugin adds a number of authentication expansion to the additional-methods script to support the vast majority of forms of authentication in the current,project application.
 
-GcxRegslideForm instructions：
+## GcxRegslideForm Usage method：
 Ⅰ、Including it on your page
 ```javescript
 <script src=".../js/merge/gcxRegslideAux.js"></script>                                        Auxiliary script   
@@ -40,3 +41,13 @@ $( function()  
 } );  
 </script>  
 ```
+详细参数以及使用方法详见文档
+## 详细文档请移步
+中文：
+> http://blog.csdn.net/lensgcx/article/details/58589139
+英文：
+> http://blog.csdn.net/lensgcx/article/details/59491666
+ 
+## 版权所有
+BroccoliSpring  ( gcx )        
+> https://github.com/Lensgcx/ 
