@@ -75,6 +75,7 @@
 	address_setting: [ 'postion:center', 'cen_adjust:0.8' ],
 	fax_setting: [ 'postion:center', 'cen_adjust:0.8' ],
 	remarks_setting: [ 'postion:center', 'cen_adjust:0.8', 'norequired' ],
+	
 
 
 
