@@ -1,7 +1,6 @@
 /*
  +----------------------------------------------------------------------------------------------------------------------------------------------
  * jQuery gcxRegslideHDialog Plugin v2.0.1   (based on jQuery hDialog @version 2.0.1)
- * update：2017.2
  * Plugin Introduce ：For service  jQuery gcxRegslideForm Plugin v1.1.0, the main function for the custom window display
  * Copyright (c)   haibao    modify:  高仓雄（gcx / Spring of broccoli）   In Hangzhou, China
  * Contact ：Wechat（lensgcx）
