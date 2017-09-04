@@ -29,7 +29,7 @@ In addition, this plugin adds a number of authentication expansion to the additi
 ```javescript
 <script src=".../js/merge/gcxRegslideAux.js"></script>                                        Auxiliary script   
 <script src=".../js/lan.js"></script>                                                         language
-<script src=".../js/gcxRegslideForm-1.1.0.js"></script>                                       Core plugin
+<script src=".../js/gcxRegslideForm-ZH-1.1.0.js"></script>                                       Core plugin
 ```
 Ⅱ、Add plug-in method on object
 ```javescript
