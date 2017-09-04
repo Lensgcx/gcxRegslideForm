@@ -43,8 +43,10 @@ $( function()  
 ```
 详细参数以及使用方法详见文档
 ## 详细文档请移步
+
 中文：
 > http://blog.csdn.net/lensgcx/article/details/58589139
+
 英文：
 > http://blog.csdn.net/lensgcx/article/details/59491666
  
