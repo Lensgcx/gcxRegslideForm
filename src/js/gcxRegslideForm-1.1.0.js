@@ -1,10 +1,9 @@
 /*
  +----------------------------------------------------------------------------------------------------------------------------------------------
  * jQuery gcxRegslideForm Plugin v1.1.0
- * update：2017.2
  * Plugin Introduce ：This plugin is based on jQuery development, using the plugin page form, according to user needs, custom plug-in content,
  * 					  with the help of validate, can be dynamically to verify the form and submit verification.
- * Copyright (c) 2017.2  高仓雄（gcx / Spring of broccoli）   In Hangzhou, China
+ * Copyright (c) 2016 - 2017  高仓雄（gcx / Spring of broccoli）   In Hangzhou, China
  * Contact ：Wechat（lensgcx）
  +----------------------------------------------------------------------------------------------------------------------------------------------
  */
@@ -129,9 +128,9 @@
 		//language judgment
 		function _lanJudge( opts )
 		{
-			if( opts.language == 'en' )
+			if( opts.language === 'en' )
 				lan = jQuery.gcxRegslideForm.langs.en;
-			if( opts.language == 'zh_ch' )
+			if( opts.language === 'zh_ch' )
 				lan = jQuery.gcxRegslideForm.langs.zh_ch;
 		}
 
@@ -228,7 +227,7 @@
 						$.each( data.cont_step1, function( n, value )    // each options to find its own xx_setting style settings
 						{
 							//1st prefix add 'Load_' prefix,others add 'Radio_' prefix
-							n == 0 ? intLoadCont.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 3 ) ) : intLoadCont.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 0 ) );
+							n === 0 ? intLoadCont.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 3 ) ) : intLoadCont.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 0 ) );
 						} );
 						flag = false;  //Switch off ，prevent add for the second time
 						return opts.cont_step1 = intLoadCont;  //Output results (Content arr)
@@ -236,7 +235,7 @@
 					complete: function( XMLHttpRequest, status )
 					{
 						//Timeout, and  status is success, error equivalents
-						if( status == 'timeout' )ajaxTimeOut.abort(); 			  //Cancel request
+						if( status === 'timeout' )ajaxTimeOut.abort(); 			  //Cancel request
 					},
 					error: function( XMLHttpRequest, textStatus, data )
 					{
@@ -331,12 +330,12 @@
 		var _build_reg_btnModule = function( opts, button_moduleId, btn_Id )
 		{
 			//Create back button，value is Back，or Next
-			if( button_moduleId == 'reg_back_module' )
+			if( button_moduleId === 'reg_back_module' )
 			{
 				regBtnValue = 'Back';
 				$( '#' + opts.reg_bottom + '' ).append( $( "<div class=" + opts.button_module + " id=" + button_moduleId + ">" + "<input type='button' value=" + regBtnValue + " id=" + btn_Id + " />" + "</div>" ) );
 			}
-			else if( button_moduleId == 'reg_next_module' )
+			else if( button_moduleId === 'reg_next_module' )
 			{
 				regBtnValue = 'Next';
 				$( '#' + opts.reg_bottom + '' ).append( $( "<div class=" + opts.button_module + " id=" + button_moduleId + ">" + "<input type='button' value=" + regBtnValue + " id=" + btn_Id + " />" + "<input type='submit' value='Submit' id=" + opts.btn_submit + " />" + "</div>" ) );
@@ -384,7 +383,7 @@
 					'height': reg_contentH
 				} );
 				_build_formUl( i );  //Create a ul to each module page
-				if( i == opts.init_page )   //Page initialization loading, do not modify default page
+				if( i === opts.init_page )   //Page initialization loading, do not modify default page
 				{
 					$( '#' + opts.reg_container + ' h1' ).html( eval( "opts.tit_" + i + "st" ) );
 					/*Switch valve, main function: to determine whether the current step re loading new content page (refresh), only under certain conditions,
@@ -440,7 +439,7 @@
 		 */
 		$.fn.gcxRegslideForm.ajax_cont2_loading = function( opts, i, val )
 		{
-			if( i == 2 )
+			if( i === 2 )
 			{
 				/* Set a parameter, in order to control ajax will not be submitted repeatedly
 				 No other operations are performed until a request is completed */
@@ -474,17 +473,17 @@
 							{
 								$.each( data.cont_step4_1, function( n, value )
 								{
-									if( n == 2 || n == 3 )
+									if( n === 2 || n === 3 )
 										LoadCont4_1.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 0 ) );
-									if( n == 13 || n == 14 )
+									if( n === 13 || n === 14 )
 										LoadCont4_1.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 1 ) );
-									if( n == 0 || n == 4 || n == 5 || n == 6 )
+									if( n === 0 || n === 4 || n === 5 || n === 6 )
 										LoadCont4_1.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 2 ) );
-									if( n == 1 || n == 7 )
+									if( n === 1 || n === 7 )
 										LoadCont4_1.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 4 ) );
-									if( n == 8 || n == 9 || n == 11 || n == 12 )
+									if( n === 8 || n === 9 || n === 11 || n === 12 )
 										LoadCont4_1.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 5 ) );
-									if( n == 10 )
+									if( n === 10 )
 										LoadCont4_1.push( $.fn.gcxRegslideForm.add_prefix( opts, value, 8 ) );
 								} );
 							};
@@ -502,19 +501,19 @@
 
 							var checkVal = $( 'input:radio[name="objective"]:checked' ).val();
 							//According to the situation, the data return data is stored in the new array
-							if( checkVal == 'I want to teach or work in China' )
+							if( checkVal === 'I want to teach or work in China' )
 							{
 								_storageToArr( data.nationality_opt1, LoadCont2_opt );
 								build_4stLsit1( data, opts );
 								opts.cont_step4 = LoadCont4_1;
 							}
-							else if( checkVal == 'I want to study in China' )
+							else if( checkVal === 'I want to study in China' )
 							{
 								_storageToArr( data.nationality_opt2, LoadCont2_opt );
 								build_4stLsit1( data, opts );
 								opts.cont_step4 = LoadCont4_1;
 							}
-							else if( checkVal == 'I want to post recruiting/enrollment/coopration information' )
+							else if( checkVal === 'I want to post recruiting/enrollment/coopration information' )
 							{
 								_storageToArr( data.nationality_opt3, LoadCont2_opt );
 								build_4stLsit2( data, opts );
@@ -536,7 +535,7 @@
 						},
 						complete: function( XMLHttpRequest, status )
 						{
-							if( status == 'timeout' )ajaxTimeOut.abort();
+							if( status === 'timeout' )ajaxTimeOut.abort();
 						},
 						error: function( XMLHttpRequest, textStatus )
 						{
@@ -570,11 +569,11 @@
 		 */
 		$.fn.gcxRegslideForm.switch_change = function( opts, i )
 		{
-			if( i == 1 )$( 'input:radio[name="objective"]' ).change( function()
+			if( i === 1 )$( 'input:radio[name="objective"]' ).change( function()
 			{
 				build_Switch = true;
 			} );
-			if( i == opts.flip_Num )build_Switch = false;
+			if( i === opts.flip_Num )build_Switch = false;
 		};
 
 		/**
@@ -585,7 +584,7 @@
 		{
 			reg_content = eval( "opts.cont_step" + (i) + "" ); 				//Gets a list of contents to be added in each slide page
 			// The type of list of contents in each sliding page is object ? also its typeof is not null
-			if( typeof reg_content == 'object' && reg_content !== null )return reg_content;
+			if( typeof reg_content === 'object' && reg_content !== null )return reg_content;
 			else return reg_content = [];
 			/* or return [] */
 		};
@@ -603,7 +602,7 @@
 				/*the object's head is Radio_ select_ input_...............are to be retained ,others are be deleted*/
 				for( var v = 0; v < opts.list_prefix.length; v++ )
 				{
-					if( value.indexOf( opts.list_prefix[ v ] ) == 0 )
+					if( value.indexOf( opts.list_prefix[ v ] ) === 0 )
 					{
 						new_conList.push( value );
 					}
@@ -653,31 +652,31 @@
 				$( '#reg_' + i + 'st_ul' ).empty();
 				$.each( arr, function( j, value )
 				{
-					if( value.indexOf( opts.list_prefix[ 0 ] ) == 0 )_build_radio( opts, i, j, value, 0 );
+					if( value.indexOf( opts.list_prefix[ 0 ] ) === 0 )_build_radio( opts, i, j, value, 0 );
 					/* Head start with Radio_, create radio */
 
-					if( value.indexOf( opts.list_prefix[ 1 ] ) == 0 )_build_select( opts, value, i, j, 1 );
+					if( value.indexOf( opts.list_prefix[ 1 ] ) === 0 )_build_select( opts, value, i, j, 1 );
 					/* Head start with Select_, create Select */
 
-					if( value.indexOf( opts.list_prefix[ 2 ] ) == 0 )_build_input( opts, value, i, j, 2 );
+					if( value.indexOf( opts.list_prefix[ 2 ] ) === 0 )_build_input( opts, value, i, j, 2 );
 					/* create Input */
 
-					if( value.indexOf( opts.list_prefix[ 3 ] ) == 0 )_build_lead( opts, value, i, j );
+					if( value.indexOf( opts.list_prefix[ 3 ] ) === 0 )_build_lead( opts, value, i, j );
 					/* create Lead */
 
-					if( value.indexOf( opts.list_prefix[ 4 ] ) == 0 )_build_paragraph( opts, value, i, j, 4 );
+					if( value.indexOf( opts.list_prefix[ 4 ] ) === 0 )_build_paragraph( opts, value, i, j, 4 );
 					/* create Paragraph */
 
-					if( value.indexOf( opts.list_prefix[ 5 ] ) == 0 )_build_checkbox( opts, value, i, j, 5 );
+					if( value.indexOf( opts.list_prefix[ 5 ] ) === 0 )_build_checkbox( opts, value, i, j, 5 );
 					/* create Checkbox */
 
-					if( value.indexOf( opts.list_prefix[ 6 ] ) == 0 )_build_textarea( opts, value, i, j, 6 );
+					if( value.indexOf( opts.list_prefix[ 6 ] ) === 0 )_build_textarea( opts, value, i, j, 6 );
 					/* create Textarea */
 
-					if( value.indexOf( opts.list_prefix[ 7 ] ) == 0 )_build_password( opts, value, i, j, 7 );
+					if( value.indexOf( opts.list_prefix[ 7 ] ) === 0 )_build_password( opts, value, i, j, 7 );
 					/* create Input（ type = password ） */
 
-					if( value.indexOf( opts.list_prefix[ 8 ] ) == 0 )_build_gap( opts, value, i, j, 8 );
+					if( value.indexOf( opts.list_prefix[ 8 ] ) === 0 )_build_gap( opts, value, i, j, 8 );
 					/* create Gap */
 				} );
 				//Set the distance between each content in the registry
@@ -703,7 +702,7 @@
 		{
 			/*In page second and  fourth step, the form data is dynamically generated, and the page changes with the operation
 			 if you no need Dynamic loading，you can set  ajaxPage = null .*/
-			return ajaxPage = i == 2 || i == 4;
+			return ajaxPage = i === 2 || i === 4;
 		};
 
 		/**
@@ -714,7 +713,7 @@
 		$.fn.gcxRegslideForm.customChange = function( opts, i )
 		{
 			var name = 'nationality';
-			var simpleCondition = i == 2;
+			var simpleCondition = i === 2;
 			if( simpleCondition )     //Simplified display
 			{
 				var simpleObj = $( "[ name = " + name + " ]" );
@@ -730,7 +729,7 @@
 		 */
 		$.fn.gcxRegslideForm.customBuild = function( opts, i )
 		{
-			if( i == 2 )$( "#reg_slider_turn select[name='nationality']" ).parent().parent().css( 'margin-top', 26 );   //set margin-top
+			if( i === 2 )$( "#reg_slider_turn select[name='nationality']" ).parent().parent().css( 'margin-top', 26 );   //set margin-top
 		};
 
 		/**
@@ -800,9 +799,9 @@
 				$reg_select.append( $( "<option value= " + lan.optDefSelect + " >" + lan.optDefSelect + "</option>" ) ) :
 				$.each( arr_option, function( x, value )
 				{
-					if( x == 0 )
+					if( x === 0 )
 					{
-						if( value == lan.optDefSelect )		 // if the 1st is 'Please select' or '请选择'
+						if( value === lan.optDefSelect )		 // if the 1st is 'Please select' or '请选择'
 						{
 							$reg_select.append( $( "<option value= ''>" + value + "</option>" ) )
 						}
@@ -951,7 +950,7 @@
 			/* Set the height of gap 的高度*/
 			var gap_H = $( '#reg_' + i + 'st_li' + (j - 1) + '' ).height();
 			var $gap = $( '#reg_' + i + 'st_li' + j + '' );
-			gap_H == 19 ? $gap.css( 'height', gap_H + 3 ) : $gap.css( "height", gap_H );  //if its default height is 19,add 3,or use its height
+			gap_H === 19 ? $gap.css( 'height', gap_H + 3 ) : $gap.css( "height", gap_H );  //if its default height is 19,add 3,or use its height
 
 			_judgePro_arr( new_val, opts, i, j, k );
 		}
@@ -987,7 +986,7 @@
 				if( errortext.is( ':visible' ) )   //Operate on each object whith contain class 'visible'(need rely on validate.js)
 				{
 					var reg_li = $( '#reg_' + i + 'st_li' + j + '' );
-					reg_li.height() == 19 ? reg_li.css( 'height', reg_li.height() + 3 ) : reg_li.css( "height", reg_li.height() );
+					reg_li.height() === 19 ? reg_li.css( 'height', reg_li.height() + 3 ) : reg_li.css( "height", reg_li.height() );
 					errortext.css( { 'height': reg_li.height() } );
 					/*contents show : get object form head to index of n,and add '...' in its tail*/
 					errortext.text( errortext.text().substring( 0, opts.txtNum ) + "..." );
@@ -1052,7 +1051,7 @@
 			 and delete it in the new array.*/
 			for( var i = 0; i < arr.length; i++ )
 			{
-				if( arr[ i ].indexOf( opts.formEle_style[ 0 ] ) == 0 )
+				if( arr[ i ].indexOf( opts.formEle_style[ 0 ] ) === 0 )
 				{
 					newHarr0.push( arr[ i ] );
 					newArr.splice( i, 1 );
@@ -1060,7 +1059,7 @@
 			}
 			for( var k = 0; k < arr.length; k++ )
 			{
-				if( arr[ k ].indexOf( opts.formEle_style[ 1 ] ) == 0 )
+				if( arr[ k ].indexOf( opts.formEle_style[ 1 ] ) === 0 )
 				{
 					newHarr1.push( arr[ k ] );
 					newArr.splice( k, 1 );
@@ -1068,7 +1067,7 @@
 			}
 			for( var l = 0; i < arr.length; l++ )
 			{
-				if( arr[ l ].indexOf( opts.formEle_style[ 2 ] ) == 0 )
+				if( arr[ l ].indexOf( opts.formEle_style[ 2 ] ) === 0 )
 				{
 					newHarr2.push( arr[ l ] );
 					newArr.splice( l, 1 );
@@ -1093,7 +1092,7 @@
 		 */
 		function _setStyleAll( opts, value, v, i, j, k )
 		{
-			if( value.indexOf( opts.formEle_style[ v ] ) == 0 )   //If this value have a prefix in its head
+			if( value.indexOf( opts.formEle_style[ v ] ) === 0 )   //If this value have a prefix in its head
 			{
 				select_style = remove_spaces( value.substr( 0, opts.formEle_style[ v ].length - 1 ) ); //Cutting style name, and removes leading and trailing spaces
 				new_optStyle = remove_spaces( value.substr( opts.formEle_style[ v ].length, value.length ) ); //Cutting style attribute values, and removes leading and trailing spaces
@@ -1115,31 +1114,31 @@
 			//set option height
 			function _setOption_H( n )
 			{
-				if( v == n )$( '#reg_' + i + 'st_li' + j + ' div ' + opts.select + ' option' ).css( select_style, new_optStyle );
+				if( v === n )$( '#reg_' + i + 'st_li' + j + ' div ' + opts.select + ' option' ).css( select_style, new_optStyle );
 			}
 
 			//set input height
 			function _setIpt_H( n )
 			{
-				if( v == n )$( '#reg_' + i + 'st_li' + j + ' div ' + opts.input + '' ).css( select_style, new_optStyle );
+				if( v === n )$( '#reg_' + i + 'st_li' + j + ' div ' + opts.input + '' ).css( select_style, new_optStyle );
 			}
 
-			if( k == 1 )  			//select
+			if( k === 1 )  			//select
 			{
 				_set_property( v, i, j, k, opts.select );
 				_setOption_H( 7 );
 			}
-			else if( k == 4 )   	//paragraph
+			else if( k === 4 )   	//paragraph
 			{
 				_set_property( v, i, j, k, opts.span );
 			}
-			else if( k == 6 )   	//textarea
+			else if( k === 6 )   	//textarea
 			{
 				_set_property( v, i, j, k, opts.txt );
 			}
-			else if( k == 8 )   	//gap
+			else if( k === 8 )   	//gap
 			{
-				if( v == 0 )
+				if( v === 0 )
 				{
 					//Gap is only a width property, mainly used to fill the blank part
 					var reg_Li = $( '#reg_' + i + 'st_li' + j + '' );
@@ -1164,26 +1163,26 @@
 		function _set_property( v, i, j, k, obj )
 		{
 			//set equal
-			if( v == 0 )
+			if( v === 0 )
 			{
 				var reg_Li = $( '#reg_' + i + 'st_li' + j + '' );
 				reg_Li.css( 'width', reg_Li.width() / parseFloat( new_optStyle ) );
 			}
 			//set postion（left,right center）
-			if( v == 1 )
+			if( v === 1 )
 			{
-				if( new_optStyle == 'center' )Cen_( opts, k, i, j );
-				if( new_optStyle == 'left' )$( '#reg_' + i + 'st_li' + j + '' ).css( 'text-align', 'left' );
-				if( new_optStyle == 'right' )$( '#reg_' + i + 'st_li' + j + '' ).css( 'text-align', 'right' );
+				if( new_optStyle === 'center' )Cen_( opts, k, i, j );
+				if( new_optStyle === 'left' )$( '#reg_' + i + 'st_li' + j + '' ).css( 'text-align', 'left' );
+				if( new_optStyle === 'right' )$( '#reg_' + i + 'st_li' + j + '' ).css( 'text-align', 'right' );
 			}
 			//set center adjustment value
-			if( v == 2 )
+			if( v === 2 )
 			{
 				var reg_LiDiv = $( '#reg_' + i + 'st_li' + j + ' div' );
 				reg_LiDiv.css( 'margin-left', parseFloat( reg_LiDiv.css( 'margin-left' ) ) * parseFloat( new_optStyle ) );//设置margin-left 值 = 原始值 * 居中调整值
 			}
 			//delete name and delete required identification
-			if( v == 3 )
+			if( v === 3 )
 			{
 				$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).removeAttr( 'name' ).removeClass( 'notnull' );
 				var $require_marking = $( '#reg_' + i + 'st_li' + j + ' div .required' );
@@ -1191,28 +1190,28 @@
 				$require_marking.length !== 0 ? $require_marking.remove() : $( '#reg_' + i + 'st_li' + j + ' div p span' ).empty();
 			}
 			//change name
-			if( v == 4 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).attr( select_style, new_optStyle );
+			if( v === 4 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).attr( select_style, new_optStyle );
 
 			//change value
-			if( v == 5 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).attr( select_style, new_optStyle );
+			if( v === 5 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).attr( select_style, new_optStyle );
 
 			//set width
-			if( v == 6 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).css( select_style, new_optStyle );
+			if( v === 6 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).css( select_style, new_optStyle );
 
 			//set option size in select
-			if( v == 8 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).attr( "size", new_optStyle );
+			if( v === 8 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).attr( "size", new_optStyle );
 
 			//set font-size
-			if( v == 9 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).css( select_style, new_optStyle + 'px' );
+			if( v === 9 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).css( select_style, new_optStyle + 'px' );
 
 			//set rows
-			if( v == 10 )
+			if( v === 10 )
 			{
 				$( '#reg_' + i + 'st_li' + j + ' div textarea' ).css( 'width', '' );   //first empty width
 				$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).attr( "cols", new_optStyle );
 			}
 			//set cols
-			if( v == 11 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).attr( "rows", new_optStyle );
+			if( v === 11 )$( '#reg_' + i + 'st_li' + j + ' div ' + obj + '' ).attr( "rows", new_optStyle );
 		}
 
 		/**
@@ -1260,19 +1259,19 @@
 			var $regUltextarea = $( '#reg_' + i + 'st_li' + j + ' div textarea' );
 			var $regUlp = $( '#reg_' + i + 'st_li' + j + ' div p' );
 			//radio
-			if( k == 0 )return reg_liDivWidth = $regUllabel.width() + $regUlIpt.width() + borderW( $regUlIpt );
+			if( k === 0 )return reg_liDivWidth = $regUllabel.width() + $regUlIpt.width() + borderW( $regUlIpt );
 			//select
-			if( k == 1 )return reg_liDivWidth = $regUlp.width() + $regUlSel.width() + borderW( $regUlSel );
+			if( k === 1 )return reg_liDivWidth = $regUlp.width() + $regUlSel.width() + borderW( $regUlSel );
 			//input（type =text / password ）
-			if( k == 2 || k == 7 )return reg_liDivWidth = $regUlp.width() + $regUlIpt.width() + borderW( $regUlIpt );
+			if( k === 2 || k === 7 )return reg_liDivWidth = $regUlp.width() + $regUlIpt.width() + borderW( $regUlIpt );
 			//lead
-			if( k == 3 )return reg_liDivWidth = $( '#reg_' + i + 'st_ul li div .' + opts.lead + '' ).width();
+			if( k === 3 )return reg_liDivWidth = $( '#reg_' + i + 'st_ul li div .' + opts.lead + '' ).width();
 			//paragraph
-			if( k == 4 )return reg_liDivWidth = $( '#reg_' + i + 'st_ul li div span.' + opts.paragraph + '' ).width();
+			if( k === 4 )return reg_liDivWidth = $( '#reg_' + i + 'st_ul li div span.' + opts.paragraph + '' ).width();
 			//checkbox
-			if( k == 5 )return reg_liDivWidth = $regUllabel.width() + parseInt( $regUllabel.css( 'padding-left' ) ) * 2 + 10;
+			if( k === 5 )return reg_liDivWidth = $regUllabel.width() + parseInt( $regUllabel.css( 'padding-left' ) ) * 2 + 10;
 			//textarea
-			if( k == 6 )return reg_liDivWidth = $regUlp.width() + $regUltextarea.width() + borderW( $regUltextarea );
+			if( k === 6 )return reg_liDivWidth = $regUlp.width() + $regUltextarea.width() + borderW( $regUltextarea );
 		}
 
 		/**
@@ -1352,7 +1351,7 @@
 				Reg_slider_margL( opts );				//get margin-left
 				reg_slider_MaxMargL( opts );			//get max margin-left
 				Reg_slider_modulo();					//get  margin-left % width
-				if( -margL < max && modulo == 0 )    	//Move in the normal range，and modulo is 0
+				if( -margL < max && modulo === 0 )    	//Move in the normal range，and modulo is 0
 				{
 					if( margL < -max )return false;  	//When the magrin value of the mobile is less than -max,return
 					margL_reduce( opts ); 				//Reduce margin-left
@@ -1387,7 +1386,7 @@
 				Reg_slider_margL( opts );
 				reg_slider_MaxMargL( opts );
 				Reg_slider_modulo();
-				if( -margL <= max && modulo == 0 )
+				if( -margL <= max && modulo === 0 )
 				{
 					if( margL > 0 )return false;
 					margL_add( opts );    				//Margin-left add
@@ -1426,7 +1425,7 @@
 						if( i + 1 - Def_Postion < clickDif )
 						{
 							//Custom on the first page
-							if( i == 0 )
+							if( i === 0 )
 							{
 								$.fn.gcxRegslideForm.customFirstStep( opts, i + 1 );
 							}
@@ -1438,7 +1437,7 @@
 							Reg_slider_margL( opts );
 							reg_slider_MaxMargL( opts );
 							Reg_slider_modulo();
-							if( -margL <= max && modulo == 0 )
+							if( -margL <= max && modulo === 0 )
 							{
 								if( margL < -max || margL > 0 )return false;
 								margL = -reg_c_w * i;
@@ -1454,7 +1453,7 @@
 								/*When click to the last page (i.e., all the pages are loaded), changes the clickDif off, when the next click, click on both span much,
 								will not pop up error information. The disadvantages are as follows: when the user selects a different key option, which refreshes the list of the new content list loaded by the activation,
 								the skip click causes the associated page to not display properly.*/
-								//if( i == opts.flip_Num - 1)
+								//if( i === opts.flip_Num - 1)
 								//{
 								//	clickDif = opts.flip_Num;
 								//}
@@ -1553,7 +1552,7 @@
 		 */
 		function next_each_change( opts, x )
 		{
-			if( x == 1 )
+			if( x === 1 )
 			{
 				//back input Modular hide
 				regBackModule_hide( opts );
@@ -1565,7 +1564,7 @@
 				$.fn.gcxRegslideForm.customFirstStep( opts, x );
 				return false;
 			}
-			else if( x == opts.flip_Num )
+			else if( x === opts.flip_Num )
 			{
 				//back input Modular show
 				regBackModule_show( opts );
@@ -1589,7 +1588,7 @@
 		 */
 		function back_each_change( opts, x )
 		{
-			if( x == 1 )
+			if( x === 1 )
 			{
 				regBackModule_hide( opts );
 				title_change( opts, x );
@@ -1598,7 +1597,7 @@
 			}
 			else
 			{
-				if( x == opts.flip_Num - 1 )
+				if( x === opts.flip_Num - 1 )
 				{
 					submitHide_TitChange( opts, x );
 					build_formCont( x, opts );
@@ -1634,12 +1633,12 @@
 		{
 			var reg_topTit = eval( "opts.tit_" + i + "st" );  //Get current key = 'tit_ i st' + tit content
 			/*val（string）：single title*/
-			if( typeof reg_topTit == 'string' )
+			if( typeof reg_topTit === 'string' )
 			{
 				$( '#' + opts.reg_container + ' #' + opts.reg_HeadTit + '' ).html( reg_topTit );
 			}
 			/*object（arr）：Multiple headings( heading array )，function needs to be classified to add the title.*/
-			else if( typeof reg_topTit == 'object' )
+			else if( typeof reg_topTit === 'object' )
 			{
 				$.fn.gcxRegslideForm.custom_multipleTit( opts, reg_topTit );
 			}
@@ -1658,7 +1657,7 @@
 			/*When the title needs to change dynamically with the user's choice of operation, the user to set the title of the array,
 			it is necessary to judge and change the public extension methods, can operate on their own*/
 			var reg_tit = $( '#' + opts.reg_container + ' #' + opts.reg_HeadTit + '' );
-			if( $( "input[name='objective']:checked" ).val() == 'I want to post recruiting/enrollment/coopration information' )
+			if( $( "input[name='objective']:checked" ).val() === 'I want to post recruiting/enrollment/coopration information' )
 				reg_tit.html( titArr[ 1 ] );
 			else reg_tit.html( titArr[ 0 ] );
 		};
