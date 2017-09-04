@@ -1,10 +1,9 @@
 /*
  +----------------------------------------------------------------------------------------------------------------------------------------------
  * jQuery gcxRegslideForm Plugin v1.1.0
- * update：2017.2
  * Plugin Introduce ：For the service of the jQuery gcxRegslideForm Plugin language module shows that the value of simplified Chinese and English language,
  *   				  users can add their own language to the JS file.
- * Copyright (c) 2017.2  高仓雄（gcx / Spring of broccoli）   In Hangzhou, China
+ * Copyright (c) 2016 - 2017  高仓雄（gcx / Spring of broccoli）   In Hangzhou, China
  * Contact ：Wechat（lensgcx）
  +----------------------------------------------------------------------------------------------------------------------------------------------
  */
