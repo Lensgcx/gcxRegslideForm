@@ -22,14 +22,14 @@ module.exports = function( grunt )
 		cssmin: {
 			/*压缩 CSS 文件为 .min.css */
 			options: {
-				keepSpecialComments: 0 /* 移除 CSS 文件中的所有注释 */
+				keepSpecialComments: 0
 			},
 			minify: {
-				expand: true,        					// 启用下面的选项
-				cwd: 'src/css/',    					// 指定待压缩的文件路径
-				src: [ '**/*.css', '!**/*.min.css' ],     // 匹配相对于cwd目录下的所有css文件(排除.min.css文件)
-				dest: 'dist/css',    				// 生成的压缩文件存放的路径
-				ext: '.min.css'        					// 生成的文件都使用.min.css替换原有扩展名，生成文件存放于dest指定的目录中
+				expand: true,
+				cwd: 'src/css/',
+				src: [ '**/*.css', '!**/*.min.css' ],
+				dest: 'dist/css',
+				ext: '.min.css'
 			},
 			/*  合并CSS  */
 			merge: {
@@ -43,16 +43,15 @@ module.exports = function( grunt )
 		/*======= 压缩js，uglify插件的配置信息 =======*/
 		uglify: {
 			options: {
-				//在所有生成的文件上方加上 时间
 				banner: '/*! <%= pkg.file %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
 			minjs: {
 				files: [ {
-					expand: true,		// 启用下面的选项
-					cwd: 'src/js/',		// 指定待压缩的文件路径
-					src: [ '**/*.js', '!**/*.min.js' ], // 匹配相对于cwd目录下的所有js文件(排除.min.js文件)
-					dest: 'dist/js',	// 生成的压缩文件存放的路径
-					ext: '.min.js'		// 生成的文件都使用.min.css替换原有扩展名，生成文件存放于dest指定的目录中
+					expand: true,
+					cwd: 'src/js/',
+					src: [ '**/*.js', '!**/*.min.js' ],
+					dest: 'dist/js',
+					ext: '.min.js'
 				} ]
 			},
 			/*  合并js  */
@@ -74,14 +73,14 @@ module.exports = function( grunt )
 		imagemin: {
 			dynamic: {
 				options: {
-					optimizationLevel: 3 // png图片优化水平，3是默认值，取值区间0-7
+					optimizationLevel: 3
 				},
 				files: [
 					{
 						expand: true, // 开启动态扩展
-						cwd: "src/", // 当前工作路径
-						src: [ "**/**/*.{png,jpg,gif}" ], // 要出处理的文件格式(images下的所有png,jpg,gif)
-						dest: "dist/" // 输出目录
+						cwd: "src/",
+						src: [ "**/**/*.{png,jpg,gif}" ],
+						dest: "dist/"
 					}
 				]
 			}
@@ -97,11 +96,11 @@ module.exports = function( grunt )
 				}
 			},
 			less: {
-				files: [ 'src/css/less/*.less' ],   //监听的对象路径
-				tasks: [ 'newer:less' ],           //执行的事件
+				files: [ 'src/css/less/*.less' ],
+				tasks: [ 'newer:less' ],
 				options: {
 					spawn: false,
-					debounceDelay:5000             //每次监听的间隔时间
+					debounceDelay:5000
 				}
 			},
 			css: {
@@ -123,10 +122,8 @@ module.exports = function( grunt )
 		}
 	} );
 
-	//告诉grunt当我们在终端中输入grunt时需要做些什么
 	grunt.registerTask( 'default', [], function()
 	{
-		//告诉grunt我们将使用插件
 		grunt.loadNpmTasks( 'grunt-contrib-less' );
 		grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
 		grunt.loadNpmTasks( 'grunt-contrib-uglify' );
@@ -136,7 +133,6 @@ module.exports = function( grunt )
 		grunt.loadNpmTasks( 'grunt-bowercopy' );
 		grunt.loadNpmTasks( 'grunt-bower-task' );
 
-		//需要执行哪些任务（注意先后顺序）
 		grunt.task.run(
 			'newer:less',
 			'newer:cssmin',
