@@ -13,5 +13,6 @@
     "grunt-newer": "^1.2.0",
     "grunt-spritesmith": "^6.4.0",
     "jpegtran-bin": "^3.2.0"
+
   }
 }
