@@ -1,10 +1,9 @@
 /*
  +----------------------------------------------------------------------------------------------------------------------------------------------
  * jQuery gcxRegslideForm Plugin v1.1.0 configuration
- * update：2017.2
  * Plugin Introduce ：This plugin is based on jQuery development, using the plugin page form, according to user needs, custom plug-in content,
  * 					  with the help of validate, can be dynamically to verify the form and submit verification.
- * Copyright (c) 2017.2  高仓雄（gcx / Spring of broccoli）   In Hangzhou, China
+ * Copyright (c) 2016 - 2017  高仓雄（gcx / Spring of broccoli）   In Hangzhou, China
  * Contact ：Wechat（lensgcx）
  +----------------------------------------------------------------------------------------------------------------------------------------------
  */
