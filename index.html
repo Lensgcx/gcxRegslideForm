@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>gcxRegslideForm Plugin v1.1.0</title>
-	<link rel="stylesheet" href="dist/css/gcxRegslideStyle.min.css">
-	<script src="dist/js/jquery-1_8_3.min.js"></script>
-	<style>
-		body{ background-color: #b6bcc9; font-family: Muli, "微软雅黑", "Microsoft Yahei", Arial }
-		.plug-inTit { position: absolute; left: 50%; top: 50%; margin: -200px 0 0 -295px; text-shadow: 10px 10px 10px #949494; z-index: 2 }
-		#reg_open { cursor: pointer; position: fixed; width: 120px; height: 40px; left: 50%; top: 50%; margin-left: -60px; margin-top: -100px; border: 2px solid #b3b3b3; background-color: #fff; padding: 10px 30px; color: #444; z-index: 1; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; -moz-transition: all ease-out .6s; -webkit-transition: all ease-out .6s; -o-transition: all ease-out .6s; transition: all ease-out .6s }
-		#reg_open:hover { background: #4b4b53; color: #fff; border: 1px solid #aaa; -moz-box-shadow: 0 0 8px #ccc inset; -webkit-box-shadow: 0 0 8px #ccc inset; box-shadow: 0 0 8px #ccc inset; -moz-transition: all ease-out .6s; -webkit-transition: all ease-out .6s; -o-transition: all ease-out .6s; transition: all ease-out .6s }
-		.cube { width: 400px; height: 400px; left: calc(50% - 200px); top: calc(50% - 200px); position: relative; transform-style: preserve-3d; animation: rt 5s infinite linear; z-index: 0 }
-		@keyframes rt {
-			to { transform: rotateY(360deg) rotateX(360deg) }
-		}
-		.cube div { width: 400px; height: 400px; position: absolute; border: 5px solid #fff; filter: alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5; }
-		.top { transform-origin: 50% 0; transform: translateZ(100px) rotateX(-90deg) }
-		.bottom { transform-origin: 50% 100%; transform: translateZ(100px) rotateX(90deg) }
-		.front { transform: translateZ(100px) }
-		.back { transform: translateZ(-100px) }
-		.left { transform-origin: 0 50%; transform: translateZ(100px) rotateY(90deg) }
-		.right { transform-origin: 100% 50%; transform: translateZ(100px) rotateY(-90deg) }
-	</style>
+    <meta charset="UTF-8">
+    <title>gcxRegslideForm Plugin v1.1.0</title>
+    <link rel="stylesheet" href="dist/css/gcxRegslideStyle.min.css">
+    <script src="dist/js/jquery-1_8_3.min.js"></script>
+    <style>
+        body {position:relative;background-color:#b6bcc9;font-family:Muli,"微软雅黑","Microsoft Yahei",Arial}
+        .handle {position:absolute;width:100%;height:100%;z-index: 99}
+        .plug-inTit {width:450px;height:30px;text-align:center;margin:200px auto 0;text-shadow:10px 10px 10px #949494;z-index:2}
+        #reg_open {display:block;cursor:pointer;margin:100px auto 0;border:2px solid #b3b3b3;background-color:#fff;padding:10px 30px;color:#444;z-index:1;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;-moz-transition:all ease-out .6s;-webkit-transition:all ease-out .6s;-o-transition:all ease-out .6s;transition:all ease-out .6s}
+        #reg_open:hover {background:#4b4b53;color:#fff;border:1px solid #aaa;-moz-box-shadow:0 0 8px #ccc inset;-webkit-box-shadow:0 0 8px #ccc inset;box-shadow:0 0 8px #ccc inset;-moz-transition:all ease-out .6s;-webkit-transition:all ease-out .6s;-o-transition:all ease-out .6s;transition:all ease-out .6s}
+        .cube {width:400px;height:400px;left:calc(50% - 200px);top:calc(50% - 200px);position:relative;transform-style:preserve-3d;animation:rt 5s infinite linear;z-index:0}
+        @keyframes rt {to {transform:rotateY(360deg) rotateX(360deg)}
+        }
+        .cube div {width:400px;height:400px;position:absolute;border:5px solid #fff;filter:alpha(opacity=50);-moz-opacity:0.5;opacity:0.5;}
+        .top {transform-origin:50% 0;transform:translateZ(100px) rotateX(-90deg)}
+        .bottom {transform-origin:50% 100%;transform:translateZ(100px) rotateX(90deg)}
+        .front {transform:translateZ(100px)}
+        .back {transform:translateZ(-100px)}
+        .left {transform-origin:0 50%;transform:translateZ(100px) rotateY(90deg)}
+        .right {transform-origin:100% 50%;transform:translateZ(100px) rotateY(-90deg)}
+    </style>
 </head>
 <body>
-	<h1 class="plug-inTit">jQuery-gcxRegslideForm Plugin v1.1.0</h1>
-	<button id='reg_open'>Open</button>
-	<div class="cube">
-		<div class="top"></div>
-		<div class="bottom"></div>
-		<div class="front"></div>
-		<div class="back"></div>
-		<div class="left"></div>
-		<div class="right"></div>
-	</div>
+<div class="handle">
+    <h1 class="plug-inTit">jQuery-gcxRegslideForm Plugin v1.1.0</h1>
+    <button id='reg_open'>Open</button>
+</div>
+<div class="cube">
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="front"></div>
+    <div class="back"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
 
-	<form id='reg_container' action="reg_new.php" method="post"></form>
+<form id='reg_container' action="reg_new.php" method="post"></form>
 
-	<script src="dist/js/merge/gcxRegslideAux.min.js"></script>
-	<script src="dist/js/lan.min.js"></script>
-	<script src="dist/js/gcxRegslideForm-1.min.js"></script>
-	<script src="dist/js/configure.min.js"></script>
+<script src="dist/js/merge/gcxRegslideAux.min.js"></script>
+<script src="dist/js/lan.min.js"></script>
+<script src="dist/js/gcxRegslideForm-1.min.js"></script>
+<script src="dist/js/configure.min.js"></script>
 
 </body>
 </html>
